@@ -6,7 +6,7 @@
 <img src="https://i.ibb.co/3Rsbtv7/2.jpg" alt="2" border="0" style="height: 300px; width: 300px;" >
 <img src="https://i.ibb.co/YhWdWcZ/image.png" alt="image" border="0" id="image_back">
 <br>
-<a href="{% url 'new' %}">글 쓰기</a>
+<a href="{% url 'main:new' %}">글 쓰기</a>
 
 <h1>글 목록</h1>
 
@@ -16,7 +16,7 @@
         <h3>{{post.title}}</h3>
         {{post.writer}}<br>
         {{post.summary}}
-        <a href="{%url 'detail' post.id %}">...자세히</a>
+        <a href="{%url 'main:detail' post.id %}">...자세히</a>
     </div>
     {% endfor %}
 </div>
