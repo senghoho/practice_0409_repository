@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>내이름은뭘까용.</h1>
+
+    <h3>{{ user.profile.nickname }}님 안녕하세요.</h3>
+    <h3>당신의 학과는 {{ user.profile.department }} 입니다.</h3>
+    <h3>저의 생년월일은 {{ user.profile.birthday }} 입니다.</h3>
+    <h3>저의 MBTI는 {{ user.profile.mbti }} 입니다.</h3>
+
+
+{% endblock %}
