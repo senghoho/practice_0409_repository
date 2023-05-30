@@ -6,7 +6,9 @@
 <img src="https://i.ibb.co/3Rsbtv7/2.jpg" alt="2" border="0" style="height: 300px; width: 300px;" >
 <img src="https://i.ibb.co/YhWdWcZ/image.png" alt="image" border="0" id="image_back">
 <br>
+{% if user.is_authenticated %}
 <a href="{% url 'main:new' %}">글 쓰기</a>
+{% endif %}
 
 <h1>글 목록</h1>
 

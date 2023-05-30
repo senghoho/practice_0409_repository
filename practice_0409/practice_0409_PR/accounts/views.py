@@ -39,10 +39,10 @@ def signup(request):
                 password=request.POST['password']
 
             )
-            nickname=request.POST['nickname'],
-            department=request.POST['department'],
-            birthday=request.POST['birthday'],
-            mbti=request.POST['mbti'],
+            nickname=request.POST['nickname']
+            department=request.POST['department']
+            birthday=request.POST['birthday']
+            mbti=request.POST['mbti']
 
             profile = Profile(user=user, nickname=nickname, department=department, birthday=birthday, mbti=mbti)
             profile.save()
