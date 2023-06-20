@@ -9,5 +9,22 @@
     <h3>저의 생년월일은 {{ user.profile.birthday }} 입니다.</h3>
     <h3>저의 MBTI는 {{ user.profile.mbti }} 입니다.</h3>
 
+    {% if request.user != user %}
+        {% if request.user.profile in user.profile.follwers.all %}
+            <a href="{% url 'users:follow' user.id %}"><button type="button" class="btn btn-outline-info">언팔로우</button></a>
+        {% else %}
+            <a href="{% url 'users:follow' user.id %}"><button type="button" class="btn btn-info">팔로우</button></a>
+        {% endif %}
+    {% endif %}
 
+    <p>팔로워<br>{{user.profile.followers.count}}명</p>
+    {% for follower in user.profile.followers.all %}
+        <a href="{% url 'users:mypage' follower.user.id %}">{{ follower.user.username }}</a>
+    {% endfor %}
+
+    <p>팔로잉<br>{{user.profile.following.count}}명</p>
+    {% for following in user.profile.followings.all %}
+        <a href="{% url 'users:mypage' following.user.id %}">{{ following.user.username }}</a>
+    {% endfor %}
+    
 {% endblock %}

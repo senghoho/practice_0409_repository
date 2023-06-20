@@ -16,4 +16,5 @@ urlpatterns = [
     path("tag/<int:tag_id>", tag_posts, name="tag_posts"),
     # delete comment path 추가
     path('delete_comment/<int:id>',delete_comment, name="delete_comment"),
+    path('likes/<int:post_id>',likes, name="likes"),
 ]

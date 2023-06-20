@@ -7,6 +7,15 @@
 작성자: {{post.writer}}
 날짜: {{post.pub_date}}
 <hr>
+<a href="{% url 'main:likes' post.id %}">
+    {% if user in post.like.all %}
+    취소
+    {% else %}
+    좋아요
+    {% endif %}
+</a>
+{{post.like_count}}개
+
 {% if post.image %}
     <p><img src="{{post.image.url}}" alt="사진"></p>
 {% endif %}
