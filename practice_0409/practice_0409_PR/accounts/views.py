@@ -49,4 +49,5 @@ def signup(request):
 
             auth.login(request,user)
             return redirect('/')
+        
     return render(request, 'accounts/signup.html')

@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
-from .models import Post, Comment, Tag, User
+from main.models import Post, Comment, Tag, User
 # Create your views here.
 
-def mypage(request):
+def mypage(request, id):
     user = get_object_or_404(User, pk=id)
     context = {
         'user':user,
